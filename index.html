@@ -4,56 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dalius Clicker</title>
-    <style>
-        body {
-            text-align: center;
-            font-family: Arial, sans-serif;
-            background-color: #222;
-            color: white;
-        }
-        #game {
-            display: none;
-        }
-        #face {
-            width: 200px;
-            cursor: pointer;
-        }
-        .upgrade {
-            background: gray;
-            color: white;
-            padding: 10px;
-            margin: 10px;
-            border: none;
-            cursor: pointer;
-            display: block;
-            width: 200px;
-            text-align: center;
-        }
-        #dropdown {
-            position: absolute;
-            top: 10px;
-            right: 10px;
-            background: #444;
-            padding: 10px;
-            border-radius: 5px;
-            cursor: pointer;
-        }
-        #menu {
-            display: none;
-            position: absolute;
-            top: 50px;
-            right: 10px;
-            background: black;
-            padding: 10px;
-            border-radius: 5px;
-        }
-        #modMenu {
-            display: none;
-            background: red;
-            padding: 10px;
-            margin-top: 10px;
-        }
-    </style>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -75,6 +25,7 @@
         <h3>Upgrades:</h3>
         <button class="upgrade" onclick="buyUpgrade(1)">Saul Pkenes Men (5 Dalcoins)</button>
         <button class="upgrade" onclick="buyUpgrade(2)">Vidja Games (10 Dalcoins)</button>
+        <button class="upgrade" onclick="buyAutoClicker()">Auto Clicker (20 Dalcoins)</button>
 
         <div id="modMenu">
             <h3>MOD MENU</h3>
@@ -93,103 +44,9 @@
         </a>
     </div>
 
-    <script>
-        let dalcoins = 0;
-        let clicks = 0;
-        let playerName = "";
-        let modMode = false;
+    <!-- Link to the JavaScript file -->
+    <script src="game.js"></script>
 
-        function startGame() {
-            playerName = document.getElementById("nameInput").value.trim();
-            if (!playerName) {
-                alert("Enter a name!");
-                return;
-            }
-            document.getElementById("playerName").innerText = playerName;
-            document.getElementById("rules").style.display = "none";
-            document.getElementById("game").style.display = "block";
-
-            if (playerName === "DALIUSBOYS") {
-                modMode = true;
-                document.getElementById("modMenu").style.display = "block";
-            }
-        }
-
-        function clickDalius() {
-            dalcoins += 0.2;
-            clicks++;
-            updateUI();
-        }
-
-        function buyUpgrade(type) {
-            if (type === 1 && dalcoins >= 5) {
-                dalcoins -= 5;
-                alert("You bought Saul Pkenes Men!");
-            } else if (type === 2 && dalcoins >= 10) {
-                dalcoins -= 10;
-                alert("You bought Vidja Games!");
-            } else {
-                alert("Not enough Dalcoins!");
-            }
-            updateUI();
-        }
-
-        function updateUI() {
-            document.getElementById("dalcoins").innerText = dalcoins.toFixed(1);
-        }
-
-        function resetGame() {
-            dalcoins = 0;
-            clicks = 0;
-            document.getElementById("game").style.display = "none";
-            document.getElementById("rules").style.display = "block";
-            document.getElementById("modMenu").style.display = "none";
-            modMode = false;
-            alert("Game reset!");
-        }
-
-        function rename() {
-            let newName = prompt("Enter new name:");
-            if (newName) {
-                playerName = newName;
-                document.getElementById("playerName").innerText = playerName;
-                if (playerName === "DALIUSBOYS") {
-                    modMode = true;
-                    document.getElementById("modMenu").style.display = "block";
-                } else {
-                    modMode = false;
-                    document.getElementById("modMenu").style.display = "none";
-                }
-            }
-        }
-
-        function toggleMenu() {
-            let menu = document.getElementById("menu");
-            menu.style.display = (menu.style.display === "block") ? "none" : "block";
-        }
-
-        // Mod Menu Functions
-        function modCoins() {
-            if (modMode) {
-                dalcoins = 999999;
-                updateUI();
-                alert("You now have infinite Dalcoins!");
-            }
-        }
-
-        function modClicks() {
-            if (modMode) {
-                clicks = 999999;
-                alert("You now have infinite clicks!");
-            }
-        }
-
-        function allUpgrades() {
-            if (modMode) {
-                alert("All upgrades unlocked!");
-            }
-        }
-    </script>
-<script src="game.js"></script>
 </body>
 </html>
+
