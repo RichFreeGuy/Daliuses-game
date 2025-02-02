@@ -2,6 +2,7 @@ let dalcoins = 0;
 let clicks = 0;
 let playerName = "";
 let modMode = false;
+let autoClicker = false;
 
 // Start Game Function
 function startGame() {
@@ -42,6 +43,21 @@ function buyUpgrade(type) {
     updateUI();
 }
 
+// Auto Clicker Upgrade
+function buyAutoClicker() {
+    if (dalcoins >= 20) {
+        dalcoins -= 20;
+        autoClicker = true;
+        alert("Auto Clicker Activated!");
+        setInterval(() => {
+            if (autoClicker) clickDalius();
+        }, 1000); // Clicks every 1 second
+    } else {
+        alert("Not enough Dalcoins!");
+    }
+    updateUI();
+}
+
 // Update UI
 function updateUI() {
     document.getElementById("dalcoins").innerText = dalcoins.toFixed(1);
@@ -51,6 +67,7 @@ function updateUI() {
 function resetGame() {
     dalcoins = 0;
     clicks = 0;
+    autoClicker = false;
     document.getElementById("game").style.display = "none";
     document.getElementById("rules").style.display = "block";
     document.getElementById("modMenu").style.display = "none";
@@ -101,3 +118,4 @@ function allUpgrades() {
         alert("All upgrades unlocked!");
     }
 }
+
