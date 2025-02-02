@@ -1,0 +1,169 @@
+/* General Styling */
+body {
+    text-align: center;
+    font-family: 'Arial', sans-serif;
+    background: #121212;
+    color: white;
+    margin: 0;
+    padding: 0;
+}
+
+/* Game Title */
+h1 {
+    font-size: 3rem;
+    color: #ffcc00;
+    text-shadow: 0px 0px 10px #ffcc00;
+}
+
+/* Rules Section */
+#rules {
+    background: #222;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(255, 255, 255, 0.2);
+    width: 50%;
+    margin: auto;
+    margin-top: 20px;
+}
+
+/* Input Field */
+input {
+    padding: 10px;
+    font-size: 1rem;
+    border: 2px solid #ffcc00;
+    border-radius: 5px;
+    background: #333;
+    color: white;
+}
+
+/* Start Button */
+button {
+    padding: 10px 20px;
+    font-size: 1rem;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: 0.3s;
+}
+
+/* Standard Button Styling */
+button:hover {
+    transform: scale(1.1);
+}
+
+/* Game Section */
+#game {
+    display: none;
+    margin-top: 20px;
+}
+
+/* Dalius Face Styling */
+#face {
+    width: 200px;
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+
+/* Click Effect */
+#face:hover {
+    transform: scale(1.1);
+    filter: drop-shadow(0px 0px 10px #ffcc00);
+}
+
+/* Dalcoin Counter */
+#dalcoins {
+    font-size: 1.5rem;
+    color: #00ff00;
+    font-weight: bold;
+}
+
+/* Upgrades Section */
+.upgrade {
+    background: linear-gradient(90deg, #ff5733, #c70039);
+    color: white;
+    padding: 10px;
+    margin: 10px auto;
+    border: none;
+    cursor: pointer;
+    display: block;
+    width: 220px;
+    text-align: center;
+    border-radius: 10px;
+    box-shadow: 0px 5px 10px rgba(255, 87, 51, 0.5);
+    transition: all 0.3s ease-in-out;
+}
+
+/* Upgrade Hover Effect */
+.upgrade:hover {
+    background: linear-gradient(90deg, #c70039, #ff5733);
+    transform: scale(1.05);
+}
+
+/* Dropdown Button */
+#dropdown {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: #444;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1.5rem;
+    box-shadow: 0px 0px 10px rgba(255, 255, 255, 0.2);
+}
+
+/* Dropdown Menu */
+#menu {
+    display: none;
+    position: absolute;
+    top: 50px;
+    right: 10px;
+    background: black;
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 0px 0px 10px rgba(255, 255, 255, 0.2);
+}
+
+/* Dropdown Buttons */
+#menu button {
+    display: block;
+    background: #008cff;
+    color: white;
+    margin: 5px;
+    padding: 10px;
+    border-radius: 5px;
+    transition: 0.3s;
+}
+
+#menu button:hover {
+    background: #005bb5;
+    transform: scale(1.1);
+}
+
+/* Mod Menu Styling */
+#modMenu {
+    display: none;
+    background: red;
+    padding: 15px;
+    margin-top: 10px;
+    border-radius: 10px;
+    box-shadow: 0px 5px 15px rgba(255, 0, 0, 0.6);
+}
+
+/* Mod Buttons */
+#modMenu button {
+    background: black;
+    color: red;
+    border: 2px solid red;
+    padding: 10px;
+    margin: 5px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+#modMenu button:hover {
+    background: red;
+    color: black;
+    transform: scale(1.1);
+}
